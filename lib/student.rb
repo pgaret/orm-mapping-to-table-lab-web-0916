@@ -20,6 +20,7 @@ class Student
   def save
     DB[:conn].execute("INSERT INTO students (name, grade) VALUES ('#{self.name}', '#{self.grade}')")
   #  print DB[:conn].execute("SELECT * FROM students")
+  # changes made
     @id = DB[:conn].execute("SELECT MAX(id) FROM students").flatten[0]
   end
 
